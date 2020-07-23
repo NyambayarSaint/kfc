@@ -10,18 +10,18 @@ const PASSWORD = process.env.PASSWORD
 
 
 // LOCAL SETUP
-// mongoose.connect('mongodb://127.0.0.1:27017/kfc', {
-//     useNewUrlParser: true,
-//     useCreateIndex: true,
-//     useFindAndModify: false
-// })
-
-
-// TB MONGO SERVER SETUP
-mongoose.connect(`mongodb://${USERNAME}:${PASSWORD}@192.168.10.82:27017/kfc`, {
+mongoose.connect('mongodb://192.168.10.82:27017/kfc', {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false
 })
+
+
+// TB MONGO SERVER SETUP
+// mongoose.connect(`mongodb://${USERNAME}:${PASSWORD}@192.168.10.82:27017/kfc`, {
+//     useNewUrlParser: true,
+//     useCreateIndex: true,
+//     useFindAndModify: false
+// })
 
 console.log("MongoDB connected successfully!!!");
