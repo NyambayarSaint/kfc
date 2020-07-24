@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 const publicDirectoryPath = path.join(__dirname, "./public");
 
 // EXPRESS SERVER SETTINGS
@@ -20,9 +20,18 @@ app.use(cors());
 require("dotenv").config();
 require("./db");
 
+// DEFAULT FRONT END ROUTE
+app.get('', (req, res) => {
+    res.sendFile(path.join(__dirname + '/public/index.html'))
+})
+
 // LINKING THE PRE DEFINED ROUTES
 app.use(require("./routers/Authenticate"));
 app.use(require("./routers/User"));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/public/index.html'));
+});
 
 app.listen(port, () => {
     console.log("Server is up on port " + port);

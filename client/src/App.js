@@ -11,7 +11,7 @@ import CoIndex from "./views/user/Index";
 
 import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 
-localStorage.setItem('url', '');
+localStorage.setItem('url', 'https://kfc.tavanbogd.com');
 
 function App() {
 
